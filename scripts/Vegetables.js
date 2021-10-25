@@ -2,23 +2,26 @@ import { getVeggies, setVeggie } from "./database.js"
 
 const veggies = getVeggies()
 
-docment.addEventListener("change", (event) => {
+document.addEventListener("change", (event) => {
     if (event.target.name === "vegetable") {
-        setVeggie(event.target.value)
+        setVeggie(parseInt(event.target.value))
     }
 })
 
 export const Veggies = () => {
 
-    let html = `<ul>
-        ${
-            vegies.map(vegtable => {
-                return `<li>
-                            <input type="radio" name="vegetable" value="${vegetable.id}" /> ${vegetable.type}
-                        </li>`
-            }).join("")
-        }
-    </ul>`
+    let html = `<ul>`
+    html += `<h2>choose your vegtableeEEeeeEee</h2>`
+     
+    const listItems = veggies.map((veggie) => {
+        return `<li>
+        <input type="radio" name="vegetable" value="${veggie.id}" /> ${veggie.type}
+        </li>`
+    })
+
+
+    html += listItems.join("")
+    html += `</ul>`
 
     return html
 }
