@@ -21,19 +21,21 @@ export const FoodTruck = () => {
 
 
 
-        <article>
-        ${Entree()}
-        </article>
-        
-        <article>
-            ${Sides()}
-        </article>
 
-        <article>
-            ${Veggies()}
-        </article>
 
-        
+
+        <article class="choices">
+            <section class="choices__base">
+                ${Entree()}
+            </section>
+            <section class="choices__sides">
+                ${Sides()}
+            </section>
+            <section class="choices__veggies">
+                ${Veggies()}
+            </section>
+
+        </article>
 
         <article>
             <button id="purchase">Purchase Combo</button>
